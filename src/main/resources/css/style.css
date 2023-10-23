@@ -1,0 +1,125 @@
+@font-face {
+    font-family: "Roboto Mono";
+    font-display: swap;
+    src: url("/fonts/RobotoMono-Medium.ttf") format("truetype");
+}
+
+body {
+    font-family: "Roboto Mono", monospace;
+    padding: 0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    min-width: 100vw;
+    flex-direction: column;
+}
+
+#gallery {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#galleryContainer {
+    display: inline-flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: pink;
+    height: fit-content;
+    margin-top: 5vh;
+    border-radius: 30px 30px 30px 30px;
+}
+
+#selectedRatGallery {
+    display:inline-flex;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 5px 5px 5px 5px;
+    flex-wrap: wrap;
+}
+
+.galleryNav {
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.galleryNav img {
+    width:100%;
+}
+
+#galleryImage {
+    max-height:80vh;
+    max-width:75vw;
+}
+
+.pointer {
+    cursor:pointer;
+
+}
+
+.ratThumbnail {
+    width: 40vh;
+    height: 40vh;
+    border: 5px solid black;
+    cursor:pointer;
+}
+
+@media (prefers-color-scheme: light) {
+    footer a {
+        color: black;
+    }
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media (prefers-color-scheme: dark) {
+    footer a {
+        color: white;
+    }
+
+    body {
+        background: #202124;
+        color: white;
+    }
+    a {
+        color:white;
+    }
+}
+
+#selectedRatArea {
+    display:none;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.ratAboutInfoHeading {
+    text-align: center;
+    color: black;
+}
+
+.card{
+    margin:25px;
+    background: #e5decf;
+    border: solid black;
+    float:left;
+    border-width: 3px 4px 3px 5px;
+    border-radius:95% 4% 92% 5%/4% 95% 6% 95%;
+    transform: rotate(2deg);
+    padding:5vh;
+}
+
+.cardInner{
+    margin:15px;
+    transform: rotate(-2deg);
+}

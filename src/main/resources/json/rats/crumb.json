@@ -1,0 +1,13 @@
+{
+  "name": "Crumb",
+  "thumbnail": "/img/devils_placeholder.png",
+  "bigPic": "/img/devils_placeholder.png",
+  "born": "16.01.2023",
+  "passed": null,
+  "images": [
+    "/img/ph1.png",
+    "/img/ph2.png",
+    "/img/ph3.png",
+    "/img/ph4.png"
+  ]
+}

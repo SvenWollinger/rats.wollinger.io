@@ -1,0 +1,10 @@
+{
+  "name": "Miley",
+  "thumbnail": "/img/miley_thumb.png",
+  "bigPic": "/img/miley_silly.png",
+  "born": "Around March 2021",
+  "passed": null,
+  "images": [
+    "/img/miley_hanging.png"
+  ]
+}

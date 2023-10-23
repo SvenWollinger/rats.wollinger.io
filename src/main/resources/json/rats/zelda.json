@@ -1,0 +1,15 @@
+{
+  "name": "Zelda",
+  "thumbnail": "/img/zelda_thumb.png",
+  "bigPic": "img/zelda_pretty.webp",
+  "born": "Around March 2021",
+  "passed": null,
+  "images": [
+    "/img/zelda_pretty.webp",
+    "/img/zelda_box.webp",
+    "/img/zelda_sleep_silly.png",
+    "/img/zelda_bag.png",
+    "/img/zelda_box.png",
+    "/img/zelda_pancake1.png"
+  ]
+}

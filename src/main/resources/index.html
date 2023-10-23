@@ -1,9 +1,55 @@
-<html>
+<html lang="en">
     <head>
-        <title>Rats</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" href="img/favicon.webp" />
+        <title>rats - wollinger.io</title>
     </head>
     <body>
-        <h1 id="text">Hello World</h1>
-        <script type="text/javascript" src="app.js"></script>
+        <div id="gallery" >
+            <div id="galleryContainer">
+                <div id="galleryLeft" class="pointer galleryNav">
+                    <img src="/img/left.svg" alt="Gallery Left" draggable="false">
+                </div>
+                <div>
+                    <div style="width:100%;">
+                        <img draggable="false" style="height:5vh;" class="pointer" onclick="closeGallery()" src="/img/close.svg" alt="Close Gallery">
+                    </div>
+                    <img alt="Gallery Image" id="galleryImage" src="">
+                    <div style="width:100%;display:flex; justify-content:center;">
+                        <a id="galleryDownloadLink" href="" download><img style="height:5vh;" src="/img/download.svg" alt="Download Image"></a>
+                    </div>
+                </div>
+                <div id="galleryRight" class="pointer galleryNav">
+                    <img src="/img/right.svg" alt="Gallery Right" draggable="false">
+                </div>
+            </div>
+        </div>
+        <h1 style="text-align: center;">My Rattos</h1>
+        <div id="content">
+            <div id="selectedRatArea" style="width:100%;">
+
+                <div class="card">
+                    <p><a href="/" style="color:black;"><img src="/img/home.svg" style="width:5vh;position:absolute;" alt="home"></a></p>
+                    <div class="cardInner">
+                        <div style="float:left;width:40%;">
+                            <h2 class="ratAboutInfoHeading" id="selectedRatName">Loading...</h2>
+                            <br>
+                            <h3 class="ratAboutInfoHeading">Born: <span id="selectedRatBorn">Loading...</span></h3>
+                            <h3 class="ratAboutInfoHeading" id="selectedRatRBParent">Rainbow Bridge: <span id="selectedRatRB">Loading...</span></h3>
+                            <br>
+                            <h3 class="ratAboutInfoHeading">Gallery</h3>
+                            <div id="selectedRatGallery">
+                            </div>
+                        </div>
+                        <div style="float:left;width:40%;margin-left:5%;">
+                            <img id="selectedRatBigPic" style="width:100% auto; max-height:50vh;" alt="Rat Big Pic" src="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
+    <script src="/app.js"></script>
 </html>

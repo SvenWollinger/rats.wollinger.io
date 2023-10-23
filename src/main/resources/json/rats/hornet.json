@@ -1,0 +1,12 @@
+{
+  "name": "Hornet",
+  "thumbnail": "/img/hornet_thumb.png",
+  "bigPic": "/img/hornet_silly.png",
+  "born": "Around March 2021",
+  "passed": "22.08.2023",
+  "images": [
+    "/img/hornet_drinking.png",
+    "/img/hornet_dance.png",
+    "/img/hornet_stretch.png"
+  ]
+}
