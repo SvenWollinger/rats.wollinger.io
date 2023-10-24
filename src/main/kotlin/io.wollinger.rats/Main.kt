@@ -116,11 +116,6 @@ fun main() {
                     a(href = "/") { + "Go back?" }
                 }
                 errorParent.append(message)
-
-                /*document.getElementById("content")!!.innerHTML = """
-                    <div style='text-align:center'><p>Rat not found!</p>
-                    <a href='/'>Go back?</a></div>
-                """.trimIndent()*/
             }
         }
     }
