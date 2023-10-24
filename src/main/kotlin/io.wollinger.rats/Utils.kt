@@ -9,7 +9,6 @@ import org.w3c.xhr.XMLHttpRequest
 
 fun <T> id(id: String): T = document.getElementById(id) as T
 
-
 fun getParams() = URLSearchParams(window.location.search)
 
 fun Window.setSearchParam(key: String, value: String) {
