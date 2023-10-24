@@ -7,7 +7,11 @@ import org.w3c.dom.Window
 import org.w3c.dom.url.URLSearchParams
 import org.w3c.xhr.XMLHttpRequest
 
-fun <T> id(id: String): T = document.getElementById(id) as T
+inline fun <reified T> id(id: String): T {
+    val element = document.getElementById(id)
+    if(element is T) return element
+    throw Exception("\"$id\" is not of type ${T::class.simpleName}!")
+}
 
 fun getParams() = URLSearchParams(window.location.search)
 
