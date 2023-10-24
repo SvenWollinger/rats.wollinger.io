@@ -1,7 +1,7 @@
 @font-face {
     font-family: "Roboto Mono";
     font-display: swap;
-    src: url("/fonts/RobotoMono-Medium.ttf") format("truetype");
+    src: url("fonts/RobotoMono-Medium.ttf") format("truetype");
 }
 
 body {
