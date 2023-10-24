@@ -5,8 +5,7 @@ jobs:
     name: Test and Build
     runs-on: ubuntu-latest
     steps:
-      - name: Make gradlew executable
-        run: chmod +x gradlew
+
 
       # Setup Java 1.8 environment for the next steps
       - name: Setup Java
