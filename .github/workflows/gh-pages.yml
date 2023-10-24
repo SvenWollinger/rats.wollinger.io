@@ -5,7 +5,7 @@ on:
       - main
 jobs:
   build:
-    name: Test and Build
+    name: Build and Publish
     runs-on: ubuntu-latest
     concurrency: ci-${{ github.ref }}
     steps:
