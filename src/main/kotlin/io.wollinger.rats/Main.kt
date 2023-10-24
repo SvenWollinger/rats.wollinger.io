@@ -1,5 +1,12 @@
 package io.wollinger.rats
 
+import io.wollinger.rats.Styler.Companion.borderRadius
+import io.wollinger.rats.Styler.Companion.color
+import io.wollinger.rats.Styler.Companion.maxHeight
+import io.wollinger.rats.Styler.Companion.maxWidth
+import io.wollinger.rats.Styler.Companion.padding
+import io.wollinger.rats.Styler.Companion.textAlign
+import io.wollinger.rats.Styler.Companion.width
 import kotlinx.browser.document
 import kotlinx.browser.window
 import kotlinx.html.*
@@ -25,7 +32,10 @@ fun main() {
         if(selectedRat == null) {
             content.append(document.create.h1 {
                 + "All Rattos:"
-                style = "text-align:center;width:100%;"
+                style = styler {
+                    textAlign to "center"
+                    width to "100%"
+                }
             })
 
             config.rats.forEach { id ->
@@ -42,7 +52,10 @@ fun main() {
                         h1 {
                             + rat.name
                             if(rat.passed != null) + " ${config.rbSymbol}"
-                            style = "text-align:center;color:black;"
+                            style = styler {
+                                textAlign to "center"
+                                color to "black"
+                            }
                         }
                     }
                 }
@@ -77,27 +90,37 @@ fun main() {
                         null
                     }
                     rat.images.forEach { image ->
-                        val g = document.create.img {
+                        val thumb = document.create.img {
                             src = image
                             classes += "pointer"
                             onClickFunction = {
                                 openGallery(image)
                             }
-                            style = """
-                                        max-width: 15vw;
-                                        max-height: 15vh;
-                                        padding: 5px;
-                                        borrderRadius: 10px 10px 10px 10px;
-                                    """.trimIndent()
+                            style = styler {
+                                maxWidth to "15vw"
+                                maxHeight to "15vh"
+                                padding to "5px"
+                                borderRadius to "10px 10px 10px 10px"
+                            }
                         }
-                        document.getElementById("selectedRatGallery")!!.append(g)
+                        document.getElementById("selectedRatGallery")!!.append(thumb)
                     }
                 }
             } else {
-                document.getElementById("content")!!.innerHTML = """
+                val errorParent = id<HTMLElement>("error")
+                val message = document.create.div {
+                    style = styler {
+                        textAlign to "center"
+                    }
+                    p { + "Rat not found!" }
+                    a(href = "/") { + "Go back?" }
+                }
+                errorParent.append(message)
+
+                /*document.getElementById("content")!!.innerHTML = """
                     <div style='text-align:center'><p>Rat not found!</p>
                     <a href='/'>Go back?</a></div>
-                """.trimIndent()
+                """.trimIndent()*/
             }
         }
     }
