@@ -20,7 +20,7 @@ fun main() {
         if((event.target as Element).id == "gallery") closeGallery()
     }
 
-    dl<Config>("/json/config.json") { config ->
+    dl<Config>("json/config.json") { config ->
         info("Config: $config")
 
         val selectedRat = getParams().get("rat")
@@ -35,7 +35,7 @@ fun main() {
             config.rats.forEach { id ->
                 val ratCard = document.create.div(classes = "card")
                 content.append(ratCard)
-                dl<Rat>("/json/rats/$id.json") { rat ->
+                dl<Rat>("json/rats/$id.json") { rat ->
                     ratCard.append.div("cardInner") {
                         img(
                             src = rat.thumbnail,
@@ -53,7 +53,7 @@ fun main() {
             }
         } else {
             if(config.rats.contains(selectedRat)) {
-                dl<Rat>("/json/rats/$selectedRat.json") { rat ->
+                dl<Rat>("json/rats/$selectedRat.json") { rat ->
                     id<HTMLElement>("selectedRatName").innerText = rat.name
                     id<HTMLElement>("selectedRatArea").style.display = "flex"
                     id<HTMLImageElement>("selectedRatBigPic").src = rat.bigPic
