@@ -8,16 +8,12 @@ import kotlinx.html.dom.create
 import kotlinx.html.js.div
 import kotlinx.html.js.h1
 import kotlinx.html.js.onClickFunction
-import kotlinx.html.stream.createHTML
-import kotlinx.serialization.Serializable
-import kotlinx.serialization.json.Json
 import org.w3c.dom.*
-import org.w3c.dom.url.URLSearchParams
-import org.w3c.xhr.XMLHttpRequest
 
 fun main() {
     id<HTMLElement>("gallery").onclick = { event ->
-        if((event.target as Element).id == "gallery") closeGallery()
+        val target = event.target
+        if(target is Element && target.id == "gallery") closeGallery()
     }
 
     dl<Config>("json/config.json") { config ->
